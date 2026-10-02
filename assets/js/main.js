@@ -1,0 +1,11 @@
+(function(){'use strict';
+  document.documentElement.classList.remove('no-js');
+  const header=document.getElementById('site-header');
+  const onScroll=()=>{if(header)header.classList.toggle('is-scrolled',window.scrollY>12)};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  const reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});reveals.forEach(el=>io.observe(el));}else reveals.forEach(el=>el.classList.add('is-visible'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-72,behavior:'smooth'});}));
+  const form=document.getElementById('intake-form'),status=document.getElementById('form-status');
+  if(form){form.addEventListener('submit',async e=>{e.preventDefault();const endpoint=form.dataset.endpoint||'';const req=[...form.querySelectorAll('[required]')].filter(x=>!x.value.trim());const checked=form.querySelectorAll('input[name="services[]"]:checked');if(req.length||!checked.length){status.textContent=req.length?'Please complete the required fields.':'Please choose at least one service.';status.className='form-status error';(req[0]||form.querySelector('input[name="services[]"]'))?.focus();return;}if(!endpoint){status.textContent='Template mode: add your form endpoint in index.html (data-endpoint) before launch.';status.className='form-status error';return;}const btn=form.querySelector('button[type="submit"]'),old=btn.textContent;btn.disabled=true;btn.textContent='Sending…';try{const r=await fetch(endpoint,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});if(!r.ok)throw new Error();status.textContent='Thanks — your brief was received. We will respond within one business day.';status.className='form-status success';form.reset();}catch(_){status.textContent='Submission failed. Please try again or email us directly.';status.className='form-status error';}finally{btn.disabled=false;btn.textContent=old;}})}
+})();

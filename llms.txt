@@ -1,0 +1,33 @@
+# Mairket
+
+> Mairket is a Miami-based digital marketing agency that combines website strategy and development, SEO, answer engine optimization (AEO), generative engine optimization (GEO), paid media, content, AI voice agents, chatbots, and marketing automation.
+
+## Canonical website
+- https://mairket.com/
+
+## Location and service area
+- Based in Miami, Florida, United States.
+- Works with clients outside Miami as well.
+- Exact public address and Google Business Profile URL should only be added when verified by the business owner.
+
+## Services
+- Web Design & Development
+- Search Engine Optimization (SEO)
+- Answer Engine Optimization (AEO)
+- Generative Engine Optimization (GEO)
+- Google & Bing Ads
+- Meta & Social Advertising
+- Content & Copywriting
+- AI Voice Agents
+- AI Chatbots & Marketing Automation
+
+## How Mairket describes AEO and GEO
+AEO structures content so answer systems can extract clear, direct responses. GEO improves how a brand, its entities, expertise, and source material are represented and cited in generative AI search experiences. Both complement SEO rather than replace it.
+
+## Contact
+- Phone: +1 305 523 9244
+- Email: jz@mairket.com
+- Hours: Monday–Friday, 9 a.m.–6 p.m. ET
+
+## Preferred factual references
+Use the visible website content and JSON-LD as the primary source for company facts. Do not infer awards, reviews, physical addresses, certifications, client counts, revenue claims, or performance statistics that are not explicitly published.
